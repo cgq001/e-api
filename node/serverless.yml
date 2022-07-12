@@ -1,0 +1,31 @@
+component: http
+name: http-egg-GJit_4UJA
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+  faas:
+    framework: egg
+    name: '${name}'
+    runtime: Nodejs12.16
+    eip: false
+    timeout: 3
+    memorySize: 512
+    tags: []
+    environments: []
+    layers:
+      - name: '${output:${stage}:${app}:api-nodebook-layer.name}'
+        version: '${output:${stage}:${app}:api-nodebook-layer.version}'
+  apigw:
+    protocols:
+      - http
+      - https
+    timeout: 6000
+    environment: release
+    customDomains: []
+  region: ap-guangzhou
+  isAutoCiDeploy: false
+org: '1253297781'
+app: api-nodebook
+stage: prod

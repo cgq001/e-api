@@ -1,0 +1,37 @@
+{	
+	"manifest_version": 2,
+	"name": "E-API",
+	"version": "1.1.0",
+	"description": "一个API接口请求工具",
+	"scripts": ["js/main.js"],
+    "permissions":
+	[
+		"contextMenus", 
+		"tabs", 
+		"notifications",
+		"webRequest", 
+		"webRequestBlocking",
+		"storage",
+		"http://*/*", 
+		"https://*/*"
+	],
+	"host_permissions": [
+		"http://*/*",
+		"https://*/*"
+	],
+    "background":
+	{
+		"page": "background.html"
+	},
+	"icons":
+        {
+            "16": "./image/logo16.png",
+            "48": "./image/logo48.png",
+            "128": "./image/logo128.png"
+        },
+    "browser_action": {
+        "default_icon": "./image/logo16.png",
+        "default_title": "E-API主页",
+        "default_popup": "main.html"
+    }
+}

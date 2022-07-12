@@ -1,0 +1,13 @@
+org: '1253297781'
+app: api-nodebook
+stage: prod
+component: layer
+name: api-nodebook-layer
+inputs:
+  name: api-nodebook-layer
+  region: ap-guangzhou
+  src:
+    src: ../node_modules
+    targetDir: /node_modules
+  runtimes:
+    - Nodejs12.16
